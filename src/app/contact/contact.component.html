@@ -1,0 +1,17 @@
+<div class="container">
+<p>contact works!</p>
+
+    <ul class="list">
+        <li *ngFor="let heroes of herolist" [class.selected] = "heroes === selectedHero" (click)="onSelect(heroes)" >
+            <span class="badge">{{heroes.id}}</span> {{heroes.name}}
+        </li>
+    </ul>
+
+        <div *ngIf="selectedHero">
+            
+        <h2>{{selectedHero.name | uppercase}}</h2>
+        <div><span class="myid">{{selectedHero.id}}</span></div>
+        <label>Name</label><br>
+        <input type="text" [(ngModel)] = 'selectedHero.name'>
+        </div>
+    </div>
