@@ -11,6 +11,8 @@ import { ContactComponent } from './contact/contact.component';
 import{RouterModule, Routes} from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
 
 const myRouter : Routes = [
   {path:'', component : HomeComponent},
@@ -30,7 +32,8 @@ const myRouter : Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(myRouter)
+    RouterModule.forRoot(myRouter),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

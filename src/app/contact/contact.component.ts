@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero'; 
 import {HEROES} from '../mock-heroes';
+import { MyServiceService } from '../my-service.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -17,9 +18,11 @@ export class ContactComponent implements OnInit {
   }
   herolist = HEROES;
   
-  constructor() { }
+  constructor(private myvar : MyServiceService) { }
 
   ngOnInit() {
+    console.log("contact page" + this.myvar.method1());
+    console.log("contact page" + this.myvar.method2());
   }
 
 }
